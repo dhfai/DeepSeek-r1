@@ -6,3 +6,4 @@ pdf-files.txt
 Modelfile-generated
 /venv
 /Fine-Tuned
+.env
