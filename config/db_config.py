@@ -1,10 +1,15 @@
 import mysql.connector
+from dotenv import load_dotenv
+import os
 
-DB_HOST = 'if.unismuh.ac.id'
-DB_USER = 'root'
-DB_PASSWORD = 'mariabelajar'
-DB_NAME = 'rag_system'
-PORT_NUMBER = 3388
+load_dotenv()
+
+DB_HOST = os.getenv("DB_HOST")
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_NAME = os.getenv("DB_NAME")
+PORT_NUMBER = os.getenv("PORT_NUMBER")
+
 
 def get_connection():
     return mysql.connector.connect(
