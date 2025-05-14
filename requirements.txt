@@ -1,1 +1,14 @@
-mysql-connector-python
+langchain==0.2.6
+langchain_community==0.2.6
+chromadb
+ollama
+sentence-transformers>=2.2.2
+torch>=2.1.0
+python-docx>=0.8.11
+docx2txt>=0.8
+python-dotenv>=1.0.0
+numpy>=1.24.0
+pandas>=2.0.0
+tqdm>=4.65.0
+colorama>=0.4.6
+rich>=13.0.0

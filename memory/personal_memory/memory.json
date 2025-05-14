@@ -1,0 +1,169 @@
+{
+  "memories": [
+    {
+      "type": "document_processing",
+      "content": {
+        "file_path": "data/rppfjdjsfajf.pdf",
+        "chunks_count": 11
+      },
+      "metadata": {
+        "filename": "rppfjdjsfajf.pdf",
+        "file_size": 539193,
+        "created_time": 1746925846.2849014,
+        "modified_time": 1746925837.8450406,
+        "extension": ".pdf"
+      },
+      "timestamp": "2025-05-13T11:43:02.677008"
+    },
+    {
+      "type": "document_processing",
+      "content": {
+        "file_path": "data/rpp.pdf",
+        "chunks_count": 95
+      },
+      "metadata": {
+        "filename": "rpp.pdf",
+        "file_size": 141330,
+        "created_time": 1746925846.0809047,
+        "modified_time": 1746921397.7475867,
+        "extension": ".pdf"
+      },
+      "timestamp": "2025-05-13T11:43:04.529869"
+    },
+    {
+      "type": "document_processing",
+      "content": {
+        "file_path": "data/Perangkat Ajar_Hamdani_239022485069.pdf",
+        "chunks_count": 23
+      },
+      "metadata": {
+        "filename": "Perangkat Ajar_Hamdani_239022485069.pdf",
+        "file_size": 3964877,
+        "created_time": 1747046218.1590729,
+        "modified_time": 1747046218.1590729,
+        "extension": ".pdf"
+      },
+      "timestamp": "2025-05-13T11:43:04.996379"
+    },
+    {
+      "type": "document_processing",
+      "content": {
+        "file_path": "data/RPP.1&2 XII.pdf",
+        "chunks_count": 7
+      },
+      "metadata": {
+        "filename": "RPP.1&2 XII.pdf",
+        "file_size": 61944,
+        "created_time": 1746925845.816909,
+        "modified_time": 1746925836.405064,
+        "extension": ".pdf"
+      },
+      "timestamp": "2025-05-13T11:43:05.144287"
+    },
+    {
+      "type": "rpp_generation",
+      "content": {
+        "query": "\n                Buatkan RPP untuk:\n                - Mata Pelajaran: Matematika\n                - Kelas: 3 SD\n                - Topik: waktu\n                - Durasi: 2x45 menit menit\n                ",
+        "response": " RPP untuk Mata Pelajaran Matematika, Kelas III SD, Topik Waktu, Durasi 2x45 menit\n\n   1. Identitas\n       - Sekolah: SMA Negeri 1 Malang\n       - Mata Pelajaran: Matematika\n       - Kelas/Semester: 3 SD\n       - Materi: Waktu\n       - Alokasi Waktu: 2x45 menit\n\n   2. Kompetensi Dasar dan Indikator Pencapaian Kompetensi\n       - Kompetensi Dasar: Memahami konsep waktu, menghitung waktu dengan menggunakan jam dan menit, dan menganalisis masa yang diperlukan untuk melaksanakan suatu tugas.\n       - Indikator Pencapaian Kompetensi: Siswa dapat memahami konsep waktu, dapat menghitung waktu dengan menggunakan jam dan menit, dan dapat menganalisis masa yang diperlukan untuk melaksanakan suatu tugas.\n\n   3. Tujuan Pembelajaran\n       - Siswa dapat memahami konsep waktu, dapat menghitung waktu dengan menggunakan jam dan menit, dan dapat menganalisis masa yang diperlukan untuk melaksanakan suatu tugas.\n\n   4. Materi Pembelajaran\n       - Konsep waktu, konversi antara jam, menit, detik dan sekunder, rumus-rumus untuk menghitung waktu, masa yang diperlukan untuk melaksanakan suatu tugas.\n\n   5. Metode Pembelajaran\n       - Metode: Problem Based Learning (PBL)\n       - Disukusi, tanya jawab, penugasan, ceramah\n       - Pendekatan: Saintifik, KSE, dan Teaching at the right level (TaRL)\n\n   6. Media, Alat, dan Sumber Belajar\n       - Media: Laptop / tablet, proyektor, kertas dan potongan kertas, aplikasi waktu\n       - Alat: Kertas dan potongan kertas, aplikasi waktu\n       - Sumber Belajar: Buku Matematika, aplikasi waktu, internet\n\n   7. Langkah-langkah Pembelajaran\n       - Pendahuluan: Apersepsi dan motivasi (menjelaskan kepentingan materi waktu dalam kehidupan sehari-hari)\n       - Inti:\n         * Kegiatan mengamati (membahas konsep waktu, cara menghitung waktu dengan menggunakan jam dan menit)\n         * Kegiatan menanya (melakukan soal-soal yang bertugas memperhatikan konsep waktu)\n         * Kegiatan mengumpulkan informasi (membahas cara rumus-rumus untuk menghitung waktu)\n         * Kegiatan mengasosiasi (kerjasama dalam menyelesaikan soal-soal yang bertugas memperhatikan konsep waktu)\n         * Kegiatan mengkomunikasikan (membagikan hasil dari kegiatan mengumpulkan informasi dan mengasosiasi)\n         * Berikan contoh soal yang relevan dan bervariasi (soal-soal yang membutuhkan pemahaman konsep waktu, cara menghitung waktu dengan menggunakan jam dan menit, dan rumus-rumus untuk menghitung waktu)\n       - Penutup: Refleksi dan evaluasi (membuat siswa merumuskan pemahaman materi yang telah dijelaskan, mengumpulkan tulisan atau gambar yang dapat menunjukkan pemahaman mereka)\n\n   8. Evaluasi\n       - Evaluasi kualitatif (pertanyaan-pertanyaan yang membutuhkan jawaban yang dapat dijelaskan dengan menggunakan konsep waktu, cara menghitung waktu dengan menggunakan jam dan menit, dan rumus-rumus untuk menghitung waktu)\n       - Evaluasi quantitatif (penilaian hasil pengerjaan soal-soal yang telah diberikan)",
+        "context": {
+          "mata_pelajaran": "Matematika",
+          "kelas": "3 SD",
+          "topik": "waktu",
+          "durasi": "2x45 menit"
+        },
+        "sources": [
+          {
+            "source": "data/RPP.1&2 XII.pdf",
+            "file_size": 61944,
+            "modified_time": 1746925836.405064,
+            "extension": ".pdf",
+            "page": 3,
+            "filename": "RPP.1&2 XII.pdf",
+            "created_time": 1746925845.816909
+          },
+          {
+            "modified_time": 1747046218.1590729,
+            "page": 2,
+            "created_time": 1747046218.1590729,
+            "file_size": 3964877,
+            "filename": "Perangkat Ajar_Hamdani_239022485069.pdf",
+            "extension": ".pdf",
+            "source": "data/Perangkat Ajar_Hamdani_239022485069.pdf"
+          },
+          {
+            "source": "data/Perangkat Ajar_Hamdani_239022485069.pdf",
+            "modified_time": 1747046218.1590729,
+            "filename": "Perangkat Ajar_Hamdani_239022485069.pdf",
+            "page": 2,
+            "file_size": 3964877,
+            "created_time": 1747046218.1590729,
+            "extension": ".pdf"
+          }
+        ]
+      },
+      "metadata": {},
+      "timestamp": "2025-05-13T11:59:02.210208"
+    },
+    {
+      "type": "feedback",
+      "content": {
+        "feedback": "Perbarui bagian topik intinya kurang memuaskan",
+        "context": {
+          "mata_pelajaran": "Matematika",
+          "kelas": "3 SD",
+          "topik": "waktu",
+          "durasi": "2x45 menit"
+        },
+        "feedback_type": "general"
+      },
+      "metadata": {
+        "rpp_id": "unknown"
+      },
+      "timestamp": "2025-05-13T12:14:41.155983"
+    },
+    {
+      "type": "rpp_generation",
+      "content": {
+        "query": "\n                Buatkan RPP untuk:\n                - Mata Pelajaran: Matematika\n                - Kelas: 3 SD\n                - Topik: waktu\n                - Durasi: 2x45 menit menit\n                ",
+        "response": " Identitas:\n   - Sekolah: SDN 1 Jakarta Barat\n   - Mata Pelajaran: Matematika\n   - Kelas/Semester: 3 SD (Sederajat)\n   - Materi: Waktu\n   - Alokasi Waktu: 2x45 menit\n\n   2. Kompetensi Dasar dan Indikator Pencapaian Kompetensi:\n   - Kompetensi Dasar: Mengetahui konsep waktu, mengukur waktu, dan memanfaatkan waktu dengan efektif.\n   - Indikator Pencapaian Kompetensi:\n     - Mampu mengetahui konsep waktu (mengetahui jam, mengetahui bulan, mengetahui hari, dan lain-lain).\n     - Mampu mengukur waktu dengan menggunakan sundial, jam tangan, dan lain-lain.\n     - Mampu memanfaatkan waktu dengan efektif dalam melakukan tugas atau aktivitas.\n\n   3. Tujuan Pembelajaran:\n   - Siswa dapat mengetahui konsep waktu.\n   - Siswa dapat mengukur waktu dengan menggunakan sundial, jam tangan, dan lain-lain.\n   - Siswa dapat memanfaatkan waktu dengan efektif dalam melakukan tugas atau aktivitas.\n\n   4. Materi Pembelajaran:\n   - Konsep waktu (mengetahui jam, mengetahui bulan, mengetahui hari, dan lain-lain).\n   - Kegiatan mengamati (mengukur waktu dengan sundial, jam tangan, dan lain-lain).\n   - Meningkatkan efektivitas pemanfaatan waktu dalam melakukan tugas atau aktivitas.\n\n   5. Metode Pembelajaran:\n   - Model: Active Learning\n   - Metode: Disukusi, Tanya Jawab, Penugasan Kerja Rumah Sakit (KRS), Ceramah, Demonstrasi, dan Praktis.\n   - Pendekatan: Kognitif, Konstruktivis, dan Interaktif.\n\n   6. Media, Alat, dan Sumber Belajar:\n   - Media: Sundial, jam tangan, lukisan waktu, sisi-sisi waktu.\n   - Alat: Kerangka soal, kerja rumah sakit, lapangan beraktivitas.\n   - Sumber Belajar: Buku Matematika, web, video tutorial, lain-lain.\n\n   7. Langkah-langkah Pembelajaran:\n   - Pendahuluan: Apersepsi dan motivasi (mengingatkan kepentingan pemahaman waktu dalam kehidupan sehari-hari, menunjukkan contoh soal yang relevan).\n   - Inti:\n     * Kegiatan mengamati (mengukur waktu dengan sundial dan jam tangan).\n     * Kegiatan menanya (membuat laporan waktu).\n     * Kegiatan mengumpulkan informasi (mengekstrak informasi dari video tutorial).\n     * Kegiatan mengasosiasi (kerja bersama kelompok, melakukan diskusi).\n     * Kegiatan mengkomunikasikan (menulis laporan waktu dan menampilkannya kepada peserta didik lain).\n   - Penutup: Refleksi dan evaluasi (mengumpulkan hasil tugas, memberikan feedback, dan melakukan penilaian).\n\n   8. Penilaian:\n   - Teknik penilaian: Penilaian keshasian, Penilaian kerjasama, dan Penilaian keberhasilan.\n   - Indikator Pencapaian Kompetensi:\n     - Siswa dapat mengetahui konsep waktu dengan benar (menjawab soal yang mengenai konsep waktu dengan benar).\n     - Siswa dapat mengukur waktu dengan tepat (mengukur waktu dengan sundial dan jam tangan dengan tepat).\n     - Siswa dapat memanfaatkan waktu efektif dalam melakukan tugas atau aktivitas (menulis laporan waktu dengan tepat, mengekstrak informasi dari video tutorial dengan baik).",
+        "context": {
+          "mata_pelajaran": "Matematika",
+          "kelas": "3 SD",
+          "topik": "waktu",
+          "durasi": "2x45 menit"
+        },
+        "sources": [
+          {
+            "page": 3,
+            "source": "data/RPP.1&2 XII.pdf",
+            "filename": "RPP.1&2 XII.pdf",
+            "extension": ".pdf",
+            "created_time": 1746925845.816909,
+            "file_size": 61944,
+            "modified_time": 1746925836.405064
+          },
+          {
+            "source": "data/Perangkat Ajar_Hamdani_239022485069.pdf",
+            "filename": "Perangkat Ajar_Hamdani_239022485069.pdf",
+            "modified_time": 1747046218.1590729,
+            "extension": ".pdf",
+            "page": 2,
+            "file_size": 3964877,
+            "created_time": 1747046218.1590729
+          },
+          {
+            "filename": "Perangkat Ajar_Hamdani_239022485069.pdf",
+            "modified_time": 1747046218.1590729,
+            "file_size": 3964877,
+            "page": 2,
+            "extension": ".pdf",
+            "source": "data/Perangkat Ajar_Hamdani_239022485069.pdf",
+            "created_time": 1747046218.1590729
+          }
+        ]
+      },
+      "metadata": {},
+      "timestamp": "2025-05-13T12:19:16.651725"
+    }
+  ]
+}
