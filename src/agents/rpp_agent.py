@@ -229,6 +229,120 @@ class RPPAgent:
             self.logger.error(f"Error storing feedback: {str(e)}")
             raise
 
+    def generate_rpp_section(self, query: str, section: str, context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+        """
+        Generate a specific section of the RPP based on query and context
+
+        Args:
+            query (str): Base query for RPP generation
+            section (str): The specific section to generate
+            context (Dict[str, Any], optional): Additional context
+
+        Returns:
+            Dict[str, Any]: Generated RPP section
+        """
+        try:
+            # Get relevant documents using local embeddings
+            relevant_docs = self.vector_store.similarity_search(query)
+
+            # Prepare context from relevant documents
+            context_text = "\n\n".join([doc.page_content for doc in relevant_docs])
+
+            # Create section-specific prompt
+            section_prompt_template = f"""
+            Kamu adalah asisten yang ahli dalam membuat Rencana Pelaksanaan Pembelajaran (RPP).
+            Berdasarkan informasi dari dokumen sumber, buatkan bagian {section} dari RPP untuk:
+            {{question}}
+
+            Informasi dari Dokumen Sumber:
+            {{context}}
+
+            Sekarang, hanya buatkan bagian {section} dari RPP secara detail dan lengkap.
+            Jangan menulis bagian lain dari RPP, fokus hanya pada bagian {section}.
+            """
+
+            section_prompt = PromptTemplate(
+                template=section_prompt_template,
+                input_variables=["context", "question"]
+            )
+
+            # Use the section prompt for this specific generation
+            section_chain = RetrievalQA.from_chain_type(
+                llm=self.llm,
+                chain_type="stuff",
+                retriever=self.vector_store.vector_store.as_retriever(
+                    search_kwargs={"k": 3}
+                ),
+                chain_type_kwargs={
+                    "prompt": section_prompt,
+                    "verbose": True
+                }
+            )
+
+            # Generate the section
+            response = section_chain.invoke({
+                "query": query,
+                "context": context_text,
+            })
+
+            # Store interaction memory
+            self.memory_store.add_memory(
+                "rpp_section_generation",
+                {
+                    "query": query,
+                    "section": section,
+                    "response": response["result"],
+                    "context": context,
+                    "sources": [doc.metadata for doc in relevant_docs],
+                }
+            )
+
+            return {
+                "section_content": response["result"],
+                "section_name": section,
+                "sources": [doc.metadata for doc in relevant_docs]
+            }
+        except Exception as e:
+            self.logger.error(f"Error generating RPP section {section}: {str(e)}")
+            raise
+
+    def compile_full_rpp(self, sections: Dict[str, str]) -> str:
+        """
+        Compile all the approved sections into a complete RPP
+
+        Args:
+            sections (Dict[str, str]): Dictionary mapping section names to their content
+
+        Returns:
+            str: Complete RPP document
+        """
+        try:
+            # Define the order of sections in the final RPP
+            section_order = [
+                "Identitas",
+                "Kompetensi Dasar dan Indikator",
+                "Tujuan Pembelajaran",
+                "Materi Pembelajaran",
+                "Metode Pembelajaran",
+                "Media dan Sumber Belajar",
+                "Langkah Pembelajaran",
+                "Penilaian"
+            ]
+
+            # Compile the RPP in the correct order
+            full_rpp = "# RENCANA PELAKSANAAN PEMBELAJARAN (RPP)\n\n"
+
+            for section in section_order:
+                if section in sections:
+                    full_rpp += f"## {section}\n"
+                    full_rpp += sections[section]
+                    full_rpp += "\n\n"
+
+            return full_rpp
+        except Exception as e:
+            self.logger.error(f"Error compiling full RPP: {str(e)}")
+            raise
+
     def get_system_stats(self) -> Dict[str, Any]:
         """
         Get system statistics

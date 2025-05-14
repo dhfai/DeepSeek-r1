@@ -36,7 +36,7 @@ def main():
                     print("Direktori tidak ditemukan!")
 
             elif choice == "2":
-                # Generate RPP
+                # Generate RPP step by step
                 print("\n=== Pembuatan RPP ===")
                 print("Masukkan detail RPP yang ingin dibuat:")
 
@@ -45,7 +45,7 @@ def main():
                 topik = input("Topik: ")
                 durasi = input("Durasi (menit): ")
 
-                query = f"""
+                base_query = f"""
                 Buatkan RPP untuk:
                 - Mata Pelajaran: {mata_pelajaran}
                 - Kelas: {kelas}
@@ -60,23 +60,68 @@ def main():
                     "durasi": durasi
                 }
 
-                print("\nMembuat RPP...")
-                result = agent.generate_rpp(query, context)
+                # Define the sections to generate
+                sections = [
+                    "Identitas",
+                    "Kompetensi Dasar dan Indikator",
+                    "Tujuan Pembelajaran",
+                    "Materi Pembelajaran",
+                    "Metode Pembelajaran",
+                    "Media dan Sumber Belajar",
+                    "Langkah Pembelajaran",
+                    "Penilaian"
+                ]
 
-                print("\n=== RPP yang Dihasilkan ===")
-                print(result["rpp"])
+                # Dictionary to store the final approved sections
+                approved_sections = {}
 
-                # Get feedback
-                feedback = input("\nApakah RPP sudah sesuai? (y/n): ")
-                if feedback.lower() == 'n':
-                    feedback_detail = input("Berikan masukan untuk perbaikan: ")
-                    agent.get_feedback(
-                        result.get("rpp_id", "unknown"),
-                        {
-                            "feedback": feedback_detail,
-                            "context": context
-                        }
-                    )
+                print("\nMembuat RPP secara bertahap...")
+
+                # Generate each section with user confirmation
+                for section in sections:
+                    approved = False
+
+                    while not approved:
+                        print(f"\n=== Membuat bagian: {section} ===")
+                        result = agent.generate_rpp_section(base_query, section, context)
+
+                        print(f"\n=== {section} yang Dihasilkan ===")
+                        print(result["section_content"])
+
+                        # Get feedback for this section
+                        feedback = input(f"\nApakah bagian {section} sudah sesuai? (y/n): ")
+
+                        if feedback.lower() == 'y':
+                            approved = True
+                            approved_sections[section] = result["section_content"]
+                            print(f"Bagian {section} disetujui!")
+                        else:
+                            feedback_detail = input("Berikan masukan untuk perbaikan bagian ini: ")
+                            agent.get_feedback(
+                                result.get("section_name", "unknown"),
+                                {
+                                    "feedback": feedback_detail,
+                                    "section": section,
+                                    "context": context
+                                }
+                            )
+                            print(f"Membuat ulang bagian {section} berdasarkan masukan...")
+
+                # Compile the complete RPP after all sections are approved
+                if approved_sections:
+                    print("\n=== Menyusun RPP Lengkap ===")
+                    complete_rpp = agent.compile_full_rpp(approved_sections)
+
+                    print("\n=== RPP LENGKAP ===")
+                    print(complete_rpp)
+
+                    # Ask if user wants to save the RPP
+                    save_option = input("\nApakah ingin menyimpan RPP ini? (y/n): ")
+                    if save_option.lower() == 'y':
+                        file_name = f"RPP_{mata_pelajaran.replace(' ', '_')}_{topik.replace(' ', '_')}.md"
+                        with open(file_name, "w", encoding="utf-8") as f:
+                            f.write(complete_rpp)
+                        print(f"RPP berhasil disimpan sebagai '{file_name}'")
 
             elif choice == "3":
                 # Show system stats
